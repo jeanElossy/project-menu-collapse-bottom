@@ -1,0 +1,128 @@
+ALGORITHM three_nb_add
+VAR
+  num1,num2,num3 : INTEGER;
+  sum : INTEGER :=0;
+BEGIN
+  Read(num1)
+  Read(num2)
+  Read(num3)
+  sum := num1 + num2 + num3;
+  Write(sum)
+END
+
+// cas d'utlisation de switch
+SWITCH (n) DO
+    CASE 1 : // code to be executed if n = 1;
+            BREAK; // BREAK is used to skip the other cases
+    CASE 2 : // code to be executed if n = 2;
+    DEFAULT :  // code to be executed if n doesn't match any cases
+END_SWITCH
+
+
+
+/* *********** Bus tickets ******* */
+
+/*
+ask how old are you
+IF you are under 16, THEN pay half ticket
+ELSE pay full ticket
+*/
+// first solution
+ticket_price := 20 ;
+IF (age <=16) THEN
+   ticket_price := 10 ;
+END_IF
+
+// Second solution
+IF (age <= 16) THEN
+   ticket_price := 10 ;
+ELSE
+   ticket_price := 10 ;
+END_IF
+
+
+
+IF (age<=10) THEN
+   ticket_price := 5 ;
+ELSE_IF (age<=16) THEN
+/*  in this case, we don't specify whether the age is not under 10
+because in this case it will satisfy the first condition
+and execute the first block of instruction */
+   ticket_price := 10 ;
+ELSE
+   ticket_price := 20 ;
+END_IF
+
+
+/* **** Zoo time **** */
+/*
+1 refer to winter
+2 refer to spring
+3 refer to summer
+4 refer to autumn
+*/
+SWITCH (season) DO
+   case 1 : Write("10h00 to 16h00"); BREAK;
+   case 2 : Write("10h00 to 18h00"); BREAK;
+   case 3 : Write("10h00 to 20h00"); BREAK;
+   case 4 : Write("10h00 to 16h00"); BREAK;
+   default : Write("Wrong number") // optional use of BREAK;
+END_SWITCH
+
+
+
+
+/* *** Calculate the Sum *** */
+
+/* In this example we are going
+to calculate the sum of number from
+1 to 10 */
+ALGORITHM iterative_for
+VAR
+i : INTEGER;
+sum : INTEGER := 0;
+  
+BEGIN
+  
+FOR i FROM 1 TO 10 STEP step  DO 
+/*i represente the iterator variable,
+the 1 represent the starting point
+10 the end point
+step represent the step of the iteration and it's optional
+if we don't put then the default step will 1 */
+   sum := sum + i
+END_FOR
+   Write(sum)
+END
+
+
+ALGORITHM iterative_while
+VAR
+count : INTEGER := 0;
+// n is the number to test
+n : INTEGER;
+  
+BEGIN
+ WHILE (n%2 = 0 ) DO
+ /* while the condition is true
+ then it will repeat the instruction
+ until the condition will be false 
+   */
+   n := n/2; // every time we divide the number n by 2 and
+   count := count +1; // increment the count by 1
+
+ END_WHILE
+ Write(count)
+END
+
+
+ALGORITHM iterative_repeat
+VAR
+age : INTEGER;
+
+BEGIN
+ REPEAT
+     Read( age )
+ UNTIL ( age>=0 )
+ Write( age )
+END

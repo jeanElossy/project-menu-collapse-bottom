@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} 
 body{
   background: var(--color--body);
   font-family: 'Roboto', sans-serif;
@@ -62,6 +62,7 @@ header{
 }
 .fa-chevron-down{
   margin-top: 10px;
+  transition: 0.3s ease-in-out;
 }
 .fas, .icons__user{
   cursor: pointer;
@@ -83,10 +84,9 @@ header{
   margin-right: 30px;
   border-radius: 7px;
   position: relative;
-  top: -30px;
+  top: -40px;
   visibility: hidden;
-  transition: 0.2s ease-in-out;
-  
+  transition: 0.3s ease-in-out;
 }
 .container__bottom::before{
   content: "";
@@ -110,4 +110,12 @@ header{
 }
 .content__text__bottom a:hover, .fas:hover{
   color: brown;
+}
+
+.collapse{
+  transform: translateY(50px);
+  visibility: visible;
+}
+.change__sens{
+  transform: rotateZ(180deg);
 }
